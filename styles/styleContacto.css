@@ -1,0 +1,261 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;800&display=swap');
+
+/* ============================================================
+   RESET & BASE
+   ============================================================ */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --rojo: #e63946;
+    --rojo-dark: #c1121f;
+    --amarillo: #f4a261;
+    --crema: #fff8f0;
+    --oscuro: #1a1a2e;
+    --gris: #4a4a4a;
+    --gris-claro: #f5f5f5;
+    --blanco: #ffffff;
+    --sombra: 0 4px 20px rgba(0, 0, 0, .10);
+    --radio: 14px;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Outfit', sans-serif;
+    background: var(--crema);
+    color: var(--oscuro);
+    line-height: 1.6;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+ul {
+    list-style: none;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+/* ============================================================
+   NAVBAR
+   ============================================================ */
+#header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: var(--blanco);
+    box-shadow: 0 2px 12px rgba(0, 0, 0, .08);
+}
+
+#navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1rem 2rem;
+}
+
+#logo {
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: var(--rojo);
+}
+
+#logo-icon {
+    font-size: 1.8rem;
+}
+
+#nav-links {
+    display: flex;
+    gap: 2rem;
+}
+
+#nav-links a {
+    font-weight: 600;
+    color: var(--gris);
+}
+
+#nav-links a:hover {
+    color: var(--rojo);
+}
+
+/* ============================================================
+   SECCIONES GENERALES
+   ============================================================ */
+section {
+    padding: 5rem 2rem;
+}
+
+section h2 {
+    text-align: center;
+    font-size: 2rem;
+    font-weight: 800;
+    margin-bottom: 2.5rem;
+}
+
+section h2::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 4px;
+    background: var(--rojo);
+    border-radius: 4px;
+    margin: .5rem auto 0;
+}
+
+/* ============================================================
+   FORMULARIO DE CONTACTO
+   ============================================================ */
+#contacto {
+    background: var(--gris-claro);
+}
+
+.form-contacto {
+    max-width: 550px;
+    margin: 0 auto;
+    background: var(--blanco);
+    padding: 3rem;
+    border-radius: var(--radio);
+    box-shadow: var(--sombra);
+    text-align: left;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    font-weight: 700;
+    margin-bottom: .5rem;
+    color: var(--oscuro);
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: .9rem 1.2rem;
+    border: 2px solid #eee;
+    border-radius: var(--radio);
+    font-family: inherit;
+    font-size: 1rem;
+    outline: none;
+    background: var(--crema);
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    border-color: var(--rojo);
+    background: var(--blanco);
+}
+
+.btn-enviar {
+    background: var(--rojo);
+    color: var(--blanco);
+    border: none;
+    padding: .8rem 1.5rem;
+    width: 100%;
+    border-radius: 50px;
+    font-family: inherit;
+    font-size: 1.05rem;
+    font-weight: 700;
+    cursor: pointer;
+    margin-top: 1rem;
+}
+
+.btn-enviar:hover {
+    background: var(--rojo-dark);
+}
+
+/* ============================================================
+   FOOTER
+   ============================================================ */
+#footer {
+    background: var(--oscuro);
+    color: #ccc;
+    padding: 3rem 2rem 1.5rem;
+}
+
+#footer-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto 2.5rem;
+}
+
+.footer-col h3 {
+    color: var(--blanco);
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+}
+
+.footer-col p,
+.footer-col li {
+    font-size: .9rem;
+    color: #aaa;
+    margin-bottom: .5rem;
+}
+
+.footer-col a {
+    color: #aaa;
+}
+
+.footer-col a:hover {
+    color: var(--amarillo);
+}
+
+#redes-sociales {
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+}
+
+.red-social {
+    font-size: .9rem;
+}
+
+#footer-bottom {
+    border-top: 1px solid #333;
+    padding-top: 1.2rem;
+    text-align: center;
+    font-size: .85rem;
+    color: #666;
+}
+
+/* ============================================================
+   UTILIDADES
+   ============================================================ */
+.hidden {
+    display: none !important;
+}
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+@media (max-width: 768px) {
+    #nav-links {
+        display: none;
+    }
+
+    .form-contacto {
+        padding: 2rem 1.5rem;
+    }
+}
