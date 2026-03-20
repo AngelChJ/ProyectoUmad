@@ -1,0 +1,694 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;800&display=swap');
+
+
+/* Aplica box-sizing a todos los elementos y sus pseudo-elementos.
+   box-sizing: hace que el padding y el border NO aumenten el tamaño del elemento.
+   margin y padding en 0: quita los espacios por defecto del navegador. */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --rojo: #e63946;
+    --rojo-dark: #c1121f;
+    --amarillo: #f4a261;
+    --crema: #fff8f0;
+    --oscuro: #1a1a2e;
+    --gris: #4a4a4a;
+    --gris-claro: #f5f5f5;
+    --blanco: #ffffff;
+    --sombra: 0 4px 20px rgba(0, 0, 0, .10);
+    --radio: 14px;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+body {
+    font-family: 'Outfit', sans-serif;
+    background: var(--crema);
+    color: var(--oscuro);
+    line-height: 1.6;
+}
+
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+
+ul {
+    list-style: none;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+
+/* NAVBAR */
+
+#header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    /* aparece encima de otros elementos */
+    background: var(--blanco);
+    box-shadow: 0 2px 12px rgba(0, 0, 0, .08);
+}
+
+#navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1rem 2rem;
+}
+
+#logo {
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: var(--rojo);
+}
+
+#logo-icon {
+    font-size: 1.8rem;
+}
+
+#nav-links {
+    display: flex;
+    gap: 2rem;
+}
+
+#nav-links a {
+    font-weight: 600;
+    color: var(--gris);
+}
+
+#nav-links a:hover {
+    color: var(--rojo);
+}
+
+#btn-cart {
+    background: var(--rojo);
+    color: var(--blanco);
+    border: none;
+    border-radius: 50px;
+    padding: .55rem 1.2rem;
+    font-family: inherit;
+    font-size: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+}
+
+#btn-cart:hover {
+    background: var(--rojo-dark);
+}
+
+#cart-count {
+    background: var(--amarillo);
+    color: var(--oscuro);
+    border-radius: 50%;
+    width: 22px;
+    height: 22px;
+    display: grid;
+    place-items: center;
+    font-size: .8rem;
+    font-weight: 800;
+}
+
+
+/* BANNER PRINCIPAL */
+
+#inicio {
+    background: linear-gradient(135deg, #fff1e6 0%, #ffe0cc 100%);
+}
+
+#hero {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 5rem 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+}
+
+#hero-content {
+    flex: 1;
+    /* crece para llenar el espacio */
+}
+
+
+#hero-content h1 {
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    font-weight: 800;
+    line-height: 1.15;
+    margin-bottom: 1rem;
+    color: var(--oscuro);
+}
+
+
+#hero-content p {
+    font-size: 1.1rem;
+    color: var(--gris);
+    margin-bottom: 2rem;
+    max-width: 480px;
+    /* limita el ancho para mejor legibilidad */
+}
+
+
+#hero-buttons {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    /* si no caben en una fila, se van a la siguiente */
+}
+
+#btn-menu-hero {
+    padding: .75rem 1.8rem;
+    border-radius: 50px;
+    font-weight: 700;
+    font-size: 1rem;
+    background: var(--rojo);
+    color: var(--blanco);
+}
+
+#btn-menu-hero:hover {
+    background: var(--rojo-dark);
+}
+
+
+#hero-image {
+    flex: 1;
+    text-align: center;
+}
+
+
+#hero-img {
+    max-height: 420px;
+    object-fit: contain;
+    /* muestra la imagen completa sin recortarla */
+    margin: 0 auto;
+    /* la centra horizontalmente */
+}
+
+
+/* SECCIONES GENERALES*/
+
+/* Todas las secciones tienen el mismo espaciado interno */
+section {
+    padding: 5rem 2rem;
+}
+
+
+section h2 {
+    text-align: center;
+    font-size: 2rem;
+    font-weight: 800;
+    margin-bottom: 2.5rem;
+}
+
+/* Línea decorativa roja debajo de cada h2 (pseudo-elemento ::after) */
+section h2::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 4px;
+    background: var(--rojo);
+    border-radius: 4px;
+    margin: .5rem auto 0;
+}
+
+
+/* CATEGORÍAS*/
+
+#categorias {
+    background: var(--blanco);
+}
+
+
+#categorias-grid {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+    /* se adapta a pantallas pequeñas */
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.categoria-card {
+    background: var(--crema);
+    border: 2px solid transparent;
+    /* borde invisible por defecto; se vuelve rojo al hacer hover */
+    border-radius: var(--radio);
+    padding: 1.5rem 2rem;
+    text-align: center;
+    cursor: pointer;
+    min-width: 120px;
+}
+
+/* Al hacer hover o cuando tiene la clase "activa" (JS la agrega), muestra borde rojo y sombra */
+.categoria-card:hover,
+.categoria-card.activa {
+    border-color: var(--rojo);
+    box-shadow: var(--sombra);
+}
+
+
+.categoria-icon {
+    font-size: 2.5rem;
+    display: block;
+    margin-bottom: .4rem;
+}
+
+
+.categoria-card p {
+    font-weight: 700;
+    color: var(--gris);
+}
+
+
+/*MENÚ / TARJETAS DE PRODUCTOS*/
+
+#menu {
+    background: var(--gris-claro);
+}
+
+
+#search-bar {
+    max-width: 500px;
+    margin: 0 auto 2.5rem;
+}
+
+
+#input-search {
+    width: 100%;
+    padding: .8rem 1.2rem;
+    border: 2px solid #ddd;
+    border-radius: 50px;
+    font-family: inherit;
+    font-size: 1rem;
+    outline: none;
+}
+
+/* Al hacer clic en el buscador, el borde cambia a rojo */
+#input-search:focus {
+    border-color: var(--rojo);
+}
+
+/* Grid de productos: se ajusta automáticamente al ancho disponible.
+   Cada columna tiene mínimo 260px; si caben más, se agregan columnas. */
+#productos-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 1.5rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Tarjeta de cada producto */
+.producto-card {
+    background: var(--blanco);
+    border-radius: var(--radio);
+    overflow: hidden;
+    /* evita que la imagen sobresalga de los bordes redondeados */
+    box-shadow: var(--sombra);
+    display: flex;
+    flex-direction: column;
+    /* imagen arriba, info abajo */
+}
+
+.producto-card:hover {
+    box-shadow: 0 10px 30px rgba(0, 0, 0, .15);
+}
+
+
+.producto-img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    /* recorta la imagen para llenar el espacio sin deformarla */
+    background: #ffe8d6;
+    /* fondo de respaldo si la imagen no carga */
+}
+
+/* Área de texto de la tarjeta */
+.producto-info {
+    padding: 1.2rem;
+    flex: 1;
+    /* crece para empujar el footer de la tarjeta hacia abajo */
+    display: flex;
+    flex-direction: column;
+}
+
+/* Nombre del producto */
+.producto-nombre {
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin-bottom: .4rem;
+}
+
+/* Descripción: usa flex:1 para empujar el precio/botón al fondo de la tarjeta */
+.producto-descripcion {
+    font-size: .9rem;
+    color: var(--gris);
+    flex: 1;
+}
+
+/* Fila inferior de la tarjeta: precio a la izquierda, botón a la derecha */
+.producto-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 1rem;
+}
+
+/* Precio del producto en rojo y negrita */
+.producto-precio {
+    font-size: 1.2rem;
+    font-weight: 800;
+    color: var(--rojo);
+}
+
+/* Botón "Agregar al carrito" en cada tarjeta */
+.btn-agregar {
+    background: var(--rojo);
+    color: var(--blanco);
+    border: none;
+    border-radius: 50px;
+    padding: .45rem 1rem;
+    font-family: inherit;
+    font-size: .9rem;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.btn-agregar:hover {
+    background: var(--rojo-dark);
+}
+
+
+/*CARRITO LATERAL (sidebar)*/
+
+/* Panel deslizante fijo a la derecha de la pantalla */
+#cart-sidebar {
+    position: fixed;
+    /* no se mueve con el scroll */
+    top: 0;
+    right: 0;
+    width: 360px;
+    height: 100vh;
+    /* ocupa toda la altura de la ventana */
+    background: var(--blanco);
+    box-shadow: -4px 0 30px rgba(0, 0, 0, .15);
+    /* sombra a su izquierda */
+    z-index: 200;
+    /* por encima del overlay y del navbar */
+    display: flex;
+    flex-direction: column;
+    /* header arriba, items en medio, footer abajo */
+    transition: transform .3s ease;
+    /* animación suave al abrir/cerrar */
+}
+
+/* Mueve el carrito fuera de la pantalla hacia la derecha (oculto).
+   JS quita esta clase para mostrarlo. */
+.cart-hidden {
+    transform: translateX(110%);
+}
+
+/* Cabecera del carrito: título y botón de cerrar en fila */
+#cart-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.2rem 1.5rem;
+    border-bottom: 2px solid var(--gris-claro);
+    /* línea separadora */
+}
+
+#cart-header h2 {
+    font-size: 1.3rem;
+}
+
+/* Botón circular "✕" para cerrar el carrito */
+#btn-close-cart {
+    background: var(--gris-claro);
+    border: none;
+    border-radius: 50%;
+    width: 36px;
+    height: 36px;
+    font-size: 1.1rem;
+    cursor: pointer;
+}
+
+#btn-close-cart:hover {
+    background: #ddd;
+}
+
+/* Área de scroll donde aparecen los productos agregados al carrito */
+#cart-items {
+    flex: 1;
+    overflow-y: auto;
+    /* muestra scroll si hay muchos productos */
+    padding: 1rem 1.5rem;
+}
+
+/* Mensaje cuando el carrito está vacío */
+#cart-empty-msg {
+    text-align: center;
+    color: #aaa;
+    margin-top: 2rem;
+}
+
+/* Footer del carrito: total y botón de checkout */
+#cart-footer {
+    padding: 1.2rem 1.5rem;
+    border-top: 2px solid var(--gris-claro);
+    /* línea separadora */
+}
+
+/* Texto del total */
+#cart-total {
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+    text-align: right;
+}
+
+/* El monto total en rojo y más grande */
+#cart-total strong {
+    color: var(--rojo);
+    font-size: 1.3rem;
+}
+
+/* Botón para finalizar el pedido */
+#btn-checkout {
+    width: 100%;
+    padding: .8rem;
+    background: var(--rojo);
+    color: var(--blanco);
+    border: none;
+    border-radius: 50px;
+    font-family: inherit;
+    font-size: 1.05rem;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+#btn-checkout:hover {
+    background: var(--rojo-dark);
+}
+
+/* Capa oscura semitransparente que cubre la página cuando el carrito está abierto. */
+#cart-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, .45);
+    z-index: 199;
+    display: none;
+}
+
+
+/*SECCIÓN NOSOTROS*/
+
+#nosotros {
+    background: var(--gris-claro);
+}
+
+/* Fila con texto a la izquierda e imagen a la derecha */
+#nosotros-content {
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+    max-width: 1100px;
+    margin: 0 auto;
+    flex-wrap: wrap;
+    /* en pantallas pequeñas se apilan verticalmente */
+}
+
+/* Columna de texto */
+#nosotros-texto {
+    flex: 1;
+    min-width: 280px;
+    /* nunca se vuelve más angosta que esto */
+}
+
+/* El h2 de "Nosotros" se alinea a la izquierda (diferente al resto de secciones) */
+#nosotros-texto h2 {
+    text-align: left;
+    font-size: 2rem;
+}
+
+/* La línea roja decorativa se alinea a la izquierda también */
+#nosotros-texto h2::after {
+    margin: .5rem 0 0;
+    /* sin "auto", queda alineado a la izquierda */
+}
+
+#nosotros-texto p {
+    color: var(--gris);
+    margin: 1rem 0 2rem;
+}
+
+/* Columna de imagen */
+#nosotros-imagen {
+    flex: 1;
+    min-width: 280px;
+    text-align: center;
+}
+
+#nosotros-imagen img {
+    border-radius: var(--radio);
+    box-shadow: var(--sombra);
+    max-height: 360px;
+    object-fit: cover;
+    margin: 0 auto;
+}
+
+
+/*FOOTER*/
+
+#footer {
+    background: var(--oscuro);
+    color: #ccc;
+    padding: 3rem 2rem 1.5rem;
+}
+
+/* Grid de 4 columnas que se adapta al ancho disponible */
+#footer-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto 2.5rem;
+}
+
+/* Títulos de cada columna del footer */
+.footer-col h3 {
+    color: var(--blanco);
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+}
+
+/* Texto e ítems de lista del footer */
+.footer-col p,
+.footer-col li {
+    font-size: .9rem;
+    color: #aaa;
+    margin-bottom: .5rem;
+}
+
+/* Links del footer en gris */
+.footer-col a {
+    color: #aaa;
+}
+
+.footer-col a:hover {
+    color: var(--amarillo);
+}
+
+/* Links de redes sociales apilados verticalmente */
+#redes-sociales {
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+}
+
+.red-social {
+    font-size: .9rem;
+}
+
+#footer-bottom {
+    border-top: 1px solid #333;
+    padding-top: 1.2rem;
+    text-align: center;
+    font-size: .85rem;
+    color: #666;
+}
+
+/*UTILIDADES (Para JS)*/
+
+.hidden {
+    display: none !important;
+}
+
+/* ============================================================
+   RESPONSIVE (pantallas menores a 768px / móvil)
+   ============================================================ */
+@media (max-width: 768px) {
+
+    /* Oculta el menú de navegación en móvil (para implementar menú hamburguesa con JS) */
+    #nav-links {
+        display: none;
+    }
+
+    /* El hero se apila en columna en lugar de fila */
+    #hero {
+        flex-direction: column;
+        text-align: center;
+        padding: 3rem 1.5rem;
+    }
+
+    /* Centra los botones del hero */
+    #hero-buttons {
+        justify-content: center;
+    }
+
+    /* Oculta la imagen del hero en móvil para ahorrar espacio */
+    #hero-image {
+        display: none;
+    }
+
+    /* La sección "Nosotros" también se apila en columna */
+    #nosotros-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    /* En móvil, la línea decorativa del h2 se centra */
+    #nosotros-texto h2::after {
+        margin: .5rem auto 0;
+    }
+
+    /* El carrito ocupa toda la pantalla en móvil */
+    #cart-sidebar {
+        width: 100%;
+    }
+}
