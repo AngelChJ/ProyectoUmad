@@ -1,22 +1,254 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <meta name="description"
+        content="Fast and Foodrius - La mejor comida rápida a tu puerta. Hamburguesas, pizzas, tacos y más.">
+    <title>Fast and Foodrius - Comida Rápida</title>
+    <link rel="stylesheet" href="./styles/styles.css">
 </head>
 
 <body>
-    <header>
-        <nav>
-            <ul>
-                <li><a href="#">Home</a></li>
-                <li><a href="#">Sobre nosotros</a></li>
-                <li><a href="#">Contacto</a></li>
+
+    <!-- ===== HEADER / NAVBAR ===== -->
+    <header id="header">
+        <nav id="navbar">
+            <div id="logo">
+                <span id="logo-icon">🍔</span>
+                <span id="logo-text">Fast and Foodrius</span>
+                <span id="logo-icon">🔥</span>
+            </div>
+
+            <ul id="nav-links">
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#menu">Menú</a></li>
+                <li><a href="#nosotros">Nosotros</a></li>
+                <li><a href="#contacto">Contacto</a></li>
             </ul>
+
+
+            <!-- Apartado para el carrito de compras -->
+            <div id="cart-icon">
+                <button id="btn-cart">
+                    🛒 Carrito
+                    <span id="cart-count">0</span>
+                </button>
+            </div>
         </nav>
     </header>
+
+    <main>
+
+        <!-- BANNER PRINCIPAL -->
+        <section id="inicio">
+            <div id="hero">
+                <div id="hero-content">
+                    <h1>La mejor comida,<br>a tu puerta </h1>
+                    <p>Disfruta de nuestras hamburguesas, pizzas, tacos y más. Entrega rápida garantizada.</p>
+                    <div id="hero-buttons">
+                        <a href="#menu" id="btn-menu-hero">Ver Menú</a>
+                    </div>
+                </div>
+                <div id="hero-image">
+                    <img src="./images/hero_banner.png" alt="Fast and Foodrius Menú Assortment" id="hero-img">
+                </div>
+            </div>
+        </section>
+
+        <!-- CATEGORÍAS -->
+        <section id="categorias">
+            <h2>¿Qué se te antoja hoy?</h2>
+            <div id="categorias-grid">
+                <div class="categoria-card" data-categoria="hamburguesas">
+                    <span class="categoria-icon">🍔</span>
+                    <p>Hamburguesas</p>
+                </div>
+                <div class="categoria-card" data-categoria="pizzas">
+                    <span class="categoria-icon">🍕</span>
+                    <p>Pizzas</p>
+                </div>
+                <div class="categoria-card" data-categoria="tacos">
+                    <span class="categoria-icon">🌮</span>
+                    <p>Tacos</p>
+                </div>
+                <div class="categoria-card" data-categoria="bebidas">
+                    <span class="categoria-icon">🥤</span>
+                    <p>Bebidas</p>
+                </div>
+                <div class="categoria-card" data-categoria="postres">
+                    <span class="categoria-icon">🍦</span>
+                    <p>Postres</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- MENÚ PRINCIPAL -->
+        <section id="menu">
+            <h2>Nuestro Menú</h2>
+
+            <!-- Buscador -->
+            <div id="search-bar">
+                <input type="text" id="input-search" placeholder="Buscar producto...">
+            </div>
+
+            <div id="productos-grid">
+
+                <!-- productos -->
+                <article class="producto-card" data-id="1" data-categoria="hamburguesas">
+                    <img src="./images/hamburguesa_clasica.png" alt="Hamburguesa Clásica" class="producto-img">
+                    <div class="producto-info">
+                        <h3 class="producto-nombre">Hamburguesa Clásica</h3>
+                        <p class="producto-descripcion">Carne de res, lechuga, tomate y queso cheddar.</p>
+                        <div class="producto-footer">
+                            <span class="producto-precio">$75.00</span>
+                            <button class="btn-agregar" data-id="1">Agregar 🛒</button>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="producto-card" data-id="2" data-categoria="hamburguesas">
+                    <img src="./images/hamburguesa_bbq.png" alt="Hamburguesa BBQ" class="producto-img">
+                    <div class="producto-info">
+                        <h3 class="producto-nombre">Hamburguesa BBQ</h3>
+                        <p class="producto-descripcion">Carne de res, tocino, cebolla caramelizada y salsa BBQ.</p>
+                        <div class="producto-footer">
+                            <span class="producto-precio">$95.00</span>
+                            <button class="btn-agregar" data-id="2">Agregar 🛒</button>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="producto-card" data-id="3" data-categoria="pizzas">
+                    <img src="./images/pizza1.png" alt="Pizza Pepperoni" class="producto-img">
+                    <div class="producto-info">
+                        <h3 class="producto-nombre">Pizza Pepperoni</h3>
+                        <p class="producto-descripcion">Salsa de tomate, queso mozzarella y pepperoni.</p>
+                        <div class="producto-footer">
+                            <span class="producto-precio">$120.00</span>
+                            <button class="btn-agregar" data-id="3">Agregar 🛒</button>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="producto-card" data-id="4" data-categoria="tacos">
+                    <img src="./images/tacos1.png" alt="Tacos de Pastor" class="producto-img">
+                    <div class="producto-info">
+                        <h3 class="producto-nombre">Tacos de Pastor</h3>
+                        <p class="producto-descripcion">Carne de pastor, piña, cilantro y cebolla.</p>
+                        <div class="producto-footer">
+                            <span class="producto-precio">$55.00</span>
+                            <button class="btn-agregar" data-id="4">Agregar 🛒</button>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="producto-card" data-id="5" data-categoria="bebidas">
+                    <img src="./images/refresco1.png" alt="Refresco Grande" class="producto-img">
+                    <div class="producto-info">
+                        <h3 class="producto-nombre">Refresco Grande</h3>
+                        <p class="producto-descripcion">Elige tu sabor favorito: Cola, Naranja, Limón.</p>
+                        <div class="producto-footer">
+                            <span class="producto-precio">$30.00</span>
+                            <button class="btn-agregar" data-id="5">Agregar 🛒</button>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="producto-card" data-id="6" data-categoria="postres">
+                    <img src="./images/helado1.png" alt="Helado Sundae" class="producto-img">
+                    <div class="producto-info">
+                        <h3 class="producto-nombre">Helado Sundae</h3>
+                        <p class="producto-descripcion">Helado de vainilla con chocolate y maní.</p>
+                        <div class="producto-footer">
+                            <span class="producto-precio">$40.00</span>
+                            <button class="btn-agregar" data-id="6">Agregar 🛒</button>
+                        </div>
+                    </div>
+                </article>
+
+            </div><!-- /productos-grid -->
+        </section>
+
+
+
+        <!-- CARRITO LATERAL -->
+        <aside id="cart-sidebar" class="cart-hidden">
+            <div id="cart-header">
+                <h2>Tu Pedido 🛒</h2>
+                <button id="btn-close-cart">✕</button>
+            </div>
+
+            <div id="cart-items">
+                <!-- Los ítems del carrito se insertan aquí con JS -->
+                <p id="cart-empty-msg">Tu carrito está vacío.</p>
+            </div>
+
+            <div id="cart-footer">
+                <p id="cart-total">Total: <strong>$0.00</strong></p>
+                <button id="btn-checkout">Hacer Pedido 🚀</button>
+            </div>
+        </aside>
+
+        <div id="cart-overlay" class="hidden"></div>
+
+        <!-- ===== NOSOTROS ===== -->
+        <section id="nosotros">
+            <div id="nosotros-content">
+                <div id="nosotros-texto">
+                    <h2>¿Quiénes somos?</h2>
+                    <p>En <strong>Fast and Foodrius</strong> llevamos más de 10 años llevando la mejor comida rápida a
+                        miles de
+                        familias. Usamos ingredientes frescos y de calidad para darte la mejor experiencia.</p>
+                </div>
+                <div id="nosotros-imagen">
+                    <img src="./images/nosotros.png" alt="Equipo Fast and Foodrius Puebla">
+                </div>
+            </div>
+        </section>
+
+
+
+    </main>
+
+    <!--  FOOTER  -->
+    <footer id="footer">
+        <div id="footer-grid">
+            <div class="footer-col">
+                <h3>Fast and Foodrius 🍔</h3>
+                <p>La mejor comida rápida, donde y cuando quieras.</p>
+            </div>
+            <div class="footer-col">
+                <h3>Navegación</h3>
+                <ul>
+                    <li><a href="#inicio">Inicio</a></li>
+                    <li><a href="#menu">Menú</a></li>
+                    <li><a href="#nosotros">Nosotros</a></li>
+                </ul>
+            </div>
+            <div class="footer-col" id="contacto">
+                <h3>Contacto</h3>
+                <ul>
+                    <li>📞 +52 555 123 4567</li>
+                    <li>📧 FastAndFoodrius@gmail.com</li>
+                    <li>📍 Puebla, México</li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h3>Síguenos</h3>
+                <div id="redes-sociales">
+                    <a href="#" class="red-social">Facebook</a>
+                    <a href="#" class="red-social">Instagram</a>
+                    <a href="#" class="red-social">TikTok</a>
+                </div>
+            </div>
+        </div>
+        <div id="footer-bottom">
+            <p>&copy; 2026 Fast and Foodrius. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
     <script src="./scripts/script.js"></script>
 </body>
 
