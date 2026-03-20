@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menú - Fast and Foodrius</title>
+    <link rel="stylesheet" href="./styles/styleMenu.css">
+</head>
+
+<body>
+
+    <header id="header">
+        <nav id="navbar">
+            <div id="logo">
+                <span id="logo-icon">🍔</span>
+                <span id="logo-text">Fast and Foodrius</span>
+            </div>
+            <ul id="nav-links">
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="menu.html">Menú</a></li>
+                <li><a href="nosotros.html">Nosotros</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+            </ul>
+            <div id="cart-icon">
+                <button id="btn-cart">
+                    🛒 <span id="cart-count">0</span>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section id="categorias">
+            <h2>Categorías</h2>
+            <div id="categorias-grid">
+                <div class="categoria-card activa" data-categoria="todos">
+                    <span class="categoria-icon">🍽️</span>
+                    <p>Todos</p>
+                </div>
+                <div class="categoria-card" data-categoria="hamburguesas">
+                    <span class="categoria-icon">🍔</span>
+                    <p>Burgers</p>
+                </div>
+                <div class="categoria-card" data-categoria="pizzas">
+                    <span class="categoria-icon">🍕</span>
+                    <p>Pizzas</p>
+                </div>
+                <div class="categoria-card" data-categoria="tacos">
+                    <span class="categoria-icon">🌮</span>
+                    <p>Tacos</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="menu">
+            <h2>Nuestro Menú</h2>
+            <div id="search-bar">
+                <input type="text" id="input-search" placeholder="¿Qué buscas hoy?">
+            </div>
+            <div id="productos-grid">
+                <article class="producto-card" data-categoria="hamburguesas">
+                    <img src="./images/hamburguesa_clasica.png" alt="Burger" class="producto-img">
+                    <div class="producto-info">
+                        <h3 class="producto-nombre">La Foodrius Especial</h3>
+                        <p class="producto-descripcion">Doble carne, queso fundido y tocino crujiente.</p>
+                        <div class="producto-footer">
+                            <span class="producto-precio">$149.00</span>
+                            <button class="btn-agregar">Agregar</button>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </section>
+    </main>
+
+    <aside id="cart-sidebar" class="cart-hidden">
+        <div id="cart-header">
+            <h2>Tu Carrito</h2>
+            <button id="btn-close-cart">✕</button>
+        </div>
+        <div id="cart-items">
+            <p id="cart-empty-msg">No hay productos aún.</p>
+        </div>
+        <div id="cart-footer">
+            <p id="cart-total">Total: <strong>$0.00</strong></p>
+            <button id="btn-checkout">Finalizar Pedido</button>
+        </div>
+    </aside>
+    <div id="cart-overlay"></div>
+
+    <footer id="footer">
+        <div id="footer-grid">
+            <div class="footer-col">
+                <h3>Fast and Foodrius</h3>
+                <p>Sabor a máxima velocidad.</p>
+            </div>
+            <div class="footer-col">
+                <h3>Enlaces</h3>
+                <ul>
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="menu.html">Menú</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h3>Horarios</h3>
+                <p>Lun - Dom: 12:00 PM - 11:00 PM</p>
+            </div>
+            <div class="footer-col">
+                <h3>Síguenos</h3>
+                <div id="redes-sociales">
+                    <a href="#" class="red-social">Instagram</a>
+                    <a href="#" class="red-social">Facebook</a>
+                </div>
+            </div>
+        </div>
+        <div id="footer-bottom">
+            <p>&copy; 2026 Fast and Foodrius. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="./scripts/script.js"></script>
+</body>
+
+</html>
